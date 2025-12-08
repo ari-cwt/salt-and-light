@@ -20,21 +20,21 @@ export default function GoogleReviews() {
       date: "October 2025",
       review:
         "Professional team and fast service. They helped us handle events efficiently. The commitment to delivering high-quality events is truly unmatched.",
-      image: "/user-review-1.webp",
+      image: "/user-review-2.webp",
     },
     {
       name: "Ayu R.",
       date: "September 2025",
       review:
         "Very responsive and reliable event partner. Highly recommended for events organizing! They made our special day absolutely seamless and beautiful.",
-      image: "/user-review-1.webp",
+      image: "/user-review-4.webp",
     },
     {
       name: "Michael L.",
       date: "August 2025",
       review:
         "Excellent support from start to finish. Communication is clear and pricing is fair. We are incredibly happy with the results they achieved for our product launch.",
-      image: "/user-review-1.webp",
+      image: "/user-review-3.webp",
     },
     {
       name: "Jessica V.",

@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
             {/* Using the new Fa (Font Awesome) icons */}
             <SocialIcon
               Icon={FaInstagram}
-              href="https://instagram.com/saltandlight"
+              href="https://www.instagram.com/saltandlight_decoration/"
               label="Instagram"
             />
             <SocialIcon
