@@ -26,7 +26,7 @@ export default function GoogleReviews() {
       name: "Ayu R.",
       date: "September 2025",
       review:
-        "Very responsive and reliable event partner. Highly recommended for events organizing! They made our special day absolutely seamless and beautiful.",
+        "Partner event yang sangat responsif dan dapat diandalkan. Sangat direkomendasikan untuk penyelenggaraan acara! Mereka membuat hari istimewa kami berjalan dengan sangat lancar dan indah.",
       image: "/user-review-4.webp",
     },
     {
@@ -40,7 +40,7 @@ export default function GoogleReviews() {
       name: "Jessica V.",
       date: "July 2025",
       review:
-        "Salt & Light brought such a creative touch to our corporate event. Everyone loved the decorations and seamless execution.",
+        "Salt & Light memberikan sentuhan kreatif yang luar biasa pada acara korporat kami. Semua orang menyukai dekorasinya dan eksekusinya yang sangat mulus.",
       image: "/user-review-1.webp",
     },
   ];

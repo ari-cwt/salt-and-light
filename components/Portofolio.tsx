@@ -88,6 +88,7 @@ const portfolioData: MediaItem[] = [
     alt: "Event Montage",
     controls: false,
     autoplay: true,
+    loop: true,
     muted: true,
   },
 ];
@@ -167,7 +168,7 @@ export default function PortofolioPage() {
         {/* Title */}
         <div className="mb-16 md:text-left">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            OUR PORTOFOLIO
+            PORTOFOLIO KAMI
           </h1>
           <p
             className={`${roboto.className} italic text-gray-700 max-w-2xl mx-auto md:mx-0`}
