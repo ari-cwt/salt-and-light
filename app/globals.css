@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #f5f3e6;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Translate the logos by 50% of the combined row width 
+       (which is 100% of the original logo set width) */
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Marquee animation utility classes used by components/OurClients.tsx */
+.animate-scroll {
+  display: inline-flex;
+  animation: scroll 20s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-reverse {
+  display: inline-flex;
+  animation: scroll-reverse 20s linear infinite;
+  will-change: transform;
+}
+
+html {
+  scroll-behavior: smooth;
+}
