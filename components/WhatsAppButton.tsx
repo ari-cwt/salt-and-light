@@ -17,7 +17,7 @@ export const WhatsAppButton = () => {
              rounded-full shadow-lg
              transition-colors duration-200
              pl-[68px] md:pl-[82px]   /* space for floating circle */
-             pr-4 py-3 md:py-3"
+             pr-5 md:pr-6 py-3 md:py-3"
     >
       {/* Floating circle */}
       <div
