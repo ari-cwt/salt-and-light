@@ -42,8 +42,8 @@ export const metadata: Metadata = {
     "Event Korporat",
   ],
   icons: {
-    icon: [{ url: "/favicon.ico" }],
-    apple: "/favicon.co",
+    icon: [{ url: "/logo.webp" }],
+    apple: "/logo.webp",
     other: [{ rel: "manifest", url: "/site.webmanifest" }],
   },
 
