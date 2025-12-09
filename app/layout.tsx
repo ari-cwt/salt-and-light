@@ -41,6 +41,11 @@ export const metadata: Metadata = {
     "Wedding Organizer Jakarta",
     "Event Korporat",
   ],
+  icons: {
+    icon: [{ url: "/favicon.ico" }],
+    apple: "/favicon.co",
+    other: [{ rel: "manifest", url: "/site.webmanifest" }],
+  },
 
   // 4. Canonical URL: Menggunakan contoh URL yang jelas
   alternates: {
