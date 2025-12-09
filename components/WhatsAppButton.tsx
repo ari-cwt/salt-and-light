@@ -16,27 +16,27 @@ export const WhatsAppButton = () => {
              bg-green-500 hover:bg-green-600 text-white
              rounded-full shadow-lg
              transition-colors duration-200
-             pl-[68px] md:pl-[82px]   /* space for floating circle */
+             pl-[68px] md:pl-[82px]
              pr-5 md:pr-6 py-3 md:py-3"
     >
-      {/* Floating circle */}
+      {/* Floating circle — follows parent hover via group-hover */}
       <div
         className="
       absolute left-0 top-1/2 -translate-y-1/2
-      rounded-full bg-green-500 border-4 border-white
+      rounded-full bg-green-500 group-hover:bg-green-600
+      border-4 border-white
       w-14 h-14 md:w-[70px] md:h-[70px]
       z-50 flex items-center justify-center
       shadow-md
+      transition-colors duration-200
     "
       >
-        <FaWhatsapp className="w-[65%] h-[65%] transition-transform duration-300 group-hover:scale-110" />
+        {/* Icon scales inside fixed-size container so it won't push text */}
+        <FaWhatsapp className="w-[65%] h-[65%] transform transition-transform duration-300 group-hover:scale-110" />
       </div>
 
-      {/* Text */}
-      <span
-        className="text-white text-[13px] md:text-lg font-semibold
-                   transition-transform duration-300 group-hover:scale-105"
-      >
+      {/* Text — no scaling so no shift on hover */}
+      <span className="text-white text-[13px] md:text-lg font-semibold">
         Hubungi Kami
       </span>
     </Link>
