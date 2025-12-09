@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Sitemap {
-  const baseUrl = "saltandlightevent.com";
+  const baseUrl = "https://saltandlightevent.com";
   return [
     {
       url: baseUrl,
