@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 // Only keeping the necessary imports (Zap, Users, Camera, Mail for navItems)
-import { Zap, Users, Camera, Mail } from "lucide-react";
+import { Zap, Users, Camera, Mail, Menu, X } from "lucide-react";
 import Image from "next/image";
 
 const navItems = [
@@ -25,7 +25,12 @@ const Navbar: React.FC = () => {
 
   // This function is only attached to the mobile <button> (which is the logo)
   const handleLogoClick = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((s) => !s);
+  };
+
+  // Shared toggle for the burger button
+  const handleBurgerClick = () => {
+    setIsMenuOpen((s) => !s);
   };
 
   const LogoContent = (
@@ -44,7 +49,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="sticky top-0 z-50 w-full shadow-md bg-primary bg-opacity-95 backdrop-blur-sm py-2">
-      <div className="mx-auto flex h-20 items-center justify-between px-4 lg:px-8 max-w-7xl">
+      <div className="relative mx-auto flex h-20 items-center justify-between px-4 lg:px-8 max-w-7xl">
         {/* --- 1. Center Logo/Button (Always Centered) --- */}
         <div className="absolute left-1/2 -translate-x-1/2">
           {/* A. Desktop Link (Logo is Link to Home) */}
@@ -59,6 +64,7 @@ const Navbar: React.FC = () => {
             aria-expanded={isMenuOpen}
             aria-controls="mobile-nav-menu"
             aria-label="Toggle navigation"
+            type="button"
           >
             {LogoContent}
           </button>
@@ -78,7 +84,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* --- 3. Right Navigation Links (Desktop Only & Mobile Filler) --- */}
-        <div className="flex flex-1 justify-start space-x-8 pl-12 text-gray-700">
+        <div className="flex flex-1 justify-start space-x-8 pl-12 text-gray-700 items-center">
           {/* Desktop Right Links */}
           <div className="hidden md:flex space-x-20">
             {rightItems.map((item) => (
@@ -96,6 +102,23 @@ const Navbar: React.FC = () => {
           <div className="md:hidden w-12" aria-hidden="true">
             {/* Empty space filler */}
           </div>
+
+          {/* --- New: Mobile Burger Button (right side) --- */}
+          <button
+            onClick={handleBurgerClick}
+            className="absolute right-4 top-1/2 -translate-y-1/2 md:hidden flex items-center justify-center p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-nav-menu"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            type="button"
+          >
+            {/* show X when open, menu when closed */}
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
         </div>
       </div>
 
