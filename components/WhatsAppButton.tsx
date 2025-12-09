@@ -9,13 +9,36 @@ export const WhatsAppButton = () => {
     <Link
       href={whatsappUrl}
       target="_blank"
-      rel="noopener noreferrer" // Best practice for external links
-      // Fixed positioning for the bottom right corner
-      className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg transition-transform duration-300 hover:scale-110"
+      rel="noopener noreferrer"
       aria-label="Contact us via WhatsApp"
+      className="group fixed bottom-6 right-6 z-50
+             flex items-center
+             bg-green-500 hover:bg-green-600 text-white
+             rounded-full shadow-lg
+             transition-colors duration-200
+             pl-[68px] md:pl-[82px]   /* space for floating circle */
+             pr-4 py-3 md:py-3"
     >
-      {/* Using a simple SVG icon for the WhatsApp logo */}
-      <FaWhatsapp size={50} />
+      {/* Floating circle */}
+      <div
+        className="
+      absolute left-0 top-1/2 -translate-y-1/2
+      rounded-full bg-green-500 border-4 border-white
+      w-14 h-14 md:w-[70px] md:h-[70px]
+      z-50 flex items-center justify-center
+      shadow-md
+    "
+      >
+        <FaWhatsapp className="w-[65%] h-[65%] transition-transform duration-300 group-hover:scale-110" />
+      </div>
+
+      {/* Text */}
+      <span
+        className="text-white text-[13px] md:text-lg font-semibold
+                   transition-transform duration-300 group-hover:scale-105"
+      >
+        Hubungi Kami
+      </span>
     </Link>
   );
 };
