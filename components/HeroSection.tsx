@@ -15,11 +15,15 @@ const notoSerifDisplay = Noto_Serif_Display({
 
 export default function HeroSection() {
   // PENTING: Untuk performa terbaik, ganti URL ini dengan path ke gambar lokal di folder /public
-  const images = [
-    "/event-organizer.webp",
-    "/dekorasi.webp",
-    "/craft.webp",
-    "/workshop.webp",
+  const items = [
+    {
+      src: "/event-organizer.webp",
+      text: "EVENT ORGANIZER",
+      href: "#portfolio",
+    },
+    { src: "/dekorasi.webp", text: "DECORATION", href: "/dekorasi" },
+    { src: "/craft.webp", text: "CRAFT", href: "#portfolio" },
+    { src: "/workshop.webp", text: "WORKSHOP", href: "#portfolio" },
   ];
 
   const hover_texts = ["EVENT ORGANIZER", "DECORATION", "CRAFT", "WORKSHOP"];
@@ -40,23 +44,22 @@ export default function HeroSection() {
 
       {/* 2x2 Image Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-4xl mb-12">
-        {images.map((src, i) => (
+        {items.map((item, i) => (
           <div
             key={i}
-            className="relative overflow-hidden w-full aspect-4/3 min-h-40] group cursor-pointer"
+            className="relative overflow-hidden w-full aspect-4/3 group"
           >
-            <Link href="#portfolio" className="block w-full h-full">
+            <Link href={item.href} className="block w-full h-full">
               <Image
-                src={src}
-                // --- OPTIMIZATION 1 & 2: Priority and SEO-friendly Alt Text ---
-                alt={`Salt & Light Jasa ${hover_texts[i]} di Jakarta`}
+                src={item.src}
+                alt={`Salt & Light Jasa ${item.text} di Jakarta`}
                 fill
-                priority={i === 0} // Set priority on the first image for LCP
+                priority={i === 0}
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <span className="bg-black/50 text-white text-lg font-medium px-3 py-1 md:text-4xl tracking-wide lg:font-semibold lg:px-0 lg:py-0 w-full h-1/4 flex flex-col justify-center">
-                  {hover_texts[i]}
+                  {item.text}
                 </span>
               </div>
             </Link>

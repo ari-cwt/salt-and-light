@@ -9,7 +9,7 @@ import Image from "next/image";
 const navItems = [
   { name: "About", href: "#about", icon: Users },
   { name: "Portfolio", href: "#portfolio", icon: Camera },
-  { name: "Reviews", href: "#reviews", icon: Zap },
+  { name: "Pricing", href: "#pricelist", icon: Zap },
   {
     name: "Contact",
     href: "https://wa.me/6281287696679?text=Halo%20Salt%20%26%20Light!%20Saya%20datang%20dari%20website%20dan%20tertarik%20untuk%20mengorganisir%20sebuah%20acara.",

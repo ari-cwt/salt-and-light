@@ -31,7 +31,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({ Icon, href, label }) => (
 const Footer: React.FC = () => {
   const contact = {
     address:
-      "Puri Harvest South Jakarta Blok A no 9, jakarta selatan, Jakarta Raya, 12630, Indonesia",
+      "Puri Harvest South Jakarta Blok A no 9, Jakarta Selatan, Jakarta Raya, 12630, Indonesia",
     email: "info@saltandlightevent.com",
     phone: "+62 812 8769 6679",
     whatsapp: "+62 812 8769 6679",
