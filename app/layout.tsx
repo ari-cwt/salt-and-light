@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+import Script from "next/script";
+
 // Initialize Roboto with specific weights and configuration
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -94,6 +96,21 @@ export default function RootLayout({
   // Fix Hydration Error: Menghindari spasi atau line break antara tag <html> dan <body>
   return (
     <html lang="id">
+      <head>
+        {/* Google Ads tag */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17808056052"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17808056052');
+          `}
+        </Script>
+      </head>
       <body className={`${roboto.variable} antialiased bg-primary`}>
         <Navbar />
         {children}
