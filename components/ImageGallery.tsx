@@ -169,13 +169,13 @@ export default function DynamicGallery({
 }: {
   isShowHeader?: boolean;
 }) {
-  const images: GalleryImage[] = Array.from({ length: 36 }, (_, i) => ({
+  const images: GalleryImage[] = Array.from({ length: 88 }, (_, i) => ({
     id: i + 1,
     src: `/dekorasi/dekorasi-${i + 1}.webp`,
     alt: `Salt & Light Event ${i + 1}`,
   }));
 
-  const rowSize = Math.ceil(images.length / 3);
+  const rowSize = Math.ceil(images.length / 8);
 
   return (
     <section
@@ -206,6 +206,10 @@ export default function DynamicGallery({
         <div className="space-y-6">
           <ScrollRow images={images.slice(0, rowSize)} />
           <ScrollRow images={images.slice(rowSize, rowSize * 2)} />
+          <ScrollRow images={images.slice(rowSize * 2, rowSize * 3)} />
+          <ScrollRow images={images.slice(rowSize * 3, rowSize * 4)} />
+          <ScrollRow images={images.slice(rowSize * 5, rowSize * 6)} />
+          <ScrollRow images={images.slice(rowSize * 7, rowSize * 8)} />
         </div>
       </div>
 
