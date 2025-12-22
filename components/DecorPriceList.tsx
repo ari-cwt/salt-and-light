@@ -75,7 +75,7 @@ export default function DecorPricelistSection() {
           <h2 className="text-4xl md:text-6xl font-bold mb-4">
             DEKORASI PRICELIST
           </h2>
-          <p className="italic text-gray-700 max-w-2xl">
+          <p className="italic text-gray-700 max-w-3xl">
             Sssttt… harga mulai dari <strong>3 jutaan</strong>, kamu sudah bisa
             mendapatkan dekorasi cantik untuk event-mu.
           </p>
