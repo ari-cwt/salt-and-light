@@ -7,10 +7,8 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import ImageGallery from "@/components/ImageGallery";
 import WhatWeDo from "@/components/WhatWeDo";
 import DecorPricelistSection from "@/components/DecorPriceList";
-import { redirect } from "next/navigation";
 
 export default function Home() {
-  redirect("/dekorasi");
   return (
     <main className="flex min-h-screen flex-col w-full items-center">
       <HeroSection />

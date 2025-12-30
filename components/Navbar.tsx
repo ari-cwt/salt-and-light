@@ -7,8 +7,8 @@ import { Zap, Users, Camera, Mail, Menu, X } from "lucide-react";
 import Image from "next/image";
 
 const navItems = [
-  { name: "About", href: "#about", icon: Users },
-  { name: "Portfolio", href: "#portfolio", icon: Camera },
+  { name: "About", href: "/home/#about", icon: Users },
+  { name: "Portfolio", href: "/home/#portfolio", icon: Camera },
   { name: "Pricing", href: "#pricelist", icon: Zap },
   {
     name: "Contact",
@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
         {/* --- 1. Center Logo/Button (Always Centered) --- */}
         <div className="absolute left-1/2 -translate-x-1/2">
           {/* A. Desktop Link (Logo is Link to Home) */}
-          <Link href="/" aria-label="Home" className="hidden md:block">
+          <Link href="/home" aria-label="Home" className="hidden md:block">
             {LogoContent}
           </Link>
 
