@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 import Script from "next/script";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 // Initialize Roboto with specific weights and configuration
 const roboto = Roboto({
@@ -114,6 +115,7 @@ export default function RootLayout({
       <body className={`${roboto.variable} antialiased bg-primary`}>
         <Navbar />
         {children}
+        <WhatsAppButton />
         <Footer />
       </body>
     </html>

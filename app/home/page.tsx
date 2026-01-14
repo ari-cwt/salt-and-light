@@ -3,7 +3,6 @@ import AboutSection from "@/components/AboutSection";
 import HeroSection from "@/components/HeroSection";
 import OurClients from "@/components/OurClients";
 import PortofolioPage from "@/components/Portofolio";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import ImageGallery from "@/components/ImageGallery";
 import WhatWeDo from "@/components/WhatWeDo";
 import DecorPricelistSection from "@/components/DecorPriceList";
@@ -19,7 +18,6 @@ export default function Home() {
       {/* <GoogleReviews /> */}
       <DecorPricelistSection />
       <ImageGallery isShowHeader={true} />
-      <WhatsAppButton />
     </main>
   );
 }
