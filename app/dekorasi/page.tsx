@@ -1,8 +1,10 @@
+// app/dekorasi/page.tsx
 import fs from "fs/promises";
 import path from "path";
 import DecorPricelistSection from "@/components/DecorPriceList";
 import ImageGallery from "@/components/ImageGallery";
-import { ArrowLeft, ArrowDown } from "lucide-react";
+import FloatingPriceButton from "@/components/FloatingPriceButton"; // Import the new component
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 export const revalidate = 3600;
@@ -81,34 +83,8 @@ export default async function Decoration() {
 
       <DecorPricelistSection />
 
-      {/* UPGRADED FLOATING ACTION TAB
-        Fixed to the exact middle right (top-1/2 -translate-y-1/2).
-        Docked flush against the right edge (right-0) with a flat side and rounded left corners (rounded-l-xl).
-      */}
-      <a
-        href="#pricelist"
-        className="
-          fixed top-1/8 md:top-1/2 right-0 -translate-y-1/2 z-50 
-          flex flex-col items-center gap-3 
-          bg-[#f5f3e6] text-gray-900
-          py-6 px-3 
-          rounded-l-2xl 
-          shadow-[-5px_0_20px_rgba(0,0,0,0.15)]
-          border-y border-l border-gray-300
-          transition-transform duration-300 
-          hover:-translate-x-2
-          group
-        "
-        aria-label="Scroll to Price List"
-      >
-        <span
-          className="font-bold text-sm tracking-[0.2em] uppercase"
-          style={{ writingMode: "vertical-rl" }}
-        >
-          Lihat Harga
-        </span>
-        <ArrowDown className="w-5 h-5 text-amber-500 group-hover:translate-y-2 transition-transform duration-300" />
-      </a>
+      {/* The auto-hiding button is perfectly encapsulated here */}
+      <FloatingPriceButton />
     </div>
   );
 }

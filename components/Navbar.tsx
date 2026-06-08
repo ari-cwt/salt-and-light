@@ -2,13 +2,15 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-// Only keeping the necessary imports (Zap, Users, Camera, Mail for navItems)
-import { Zap, Users, Camera, Mail, Menu, X } from "lucide-react";
+// Added Gift icon for the new Decor Pricelist item
+import { Zap, Users, Camera, Mail, Menu, X, Gift } from "lucide-react";
 import Image from "next/image";
 
 const navItems = [
   { name: "About", href: "/home/#about", icon: Users },
   { name: "Portfolio", href: "/home/#portfolio", icon: Camera },
+  // BEST PRACTICE: Use absolute path + hash to guarantee it works from any page
+  { name: "Katalog Sewa", href: "/dekorasi#pricelist", icon: Gift },
   { name: "Pricing", href: "#pricelist", icon: Zap },
   {
     name: "Contact",
@@ -20,15 +22,14 @@ const navItems = [
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Safely split the 5 items: 2 on the left, 3 on the right
   const leftItems = navItems.slice(0, 2);
-  const rightItems = navItems.slice(2, 4);
+  const rightItems = navItems.slice(2, 5);
 
-  // This function is only attached to the mobile <button> (which is the logo)
   const handleLogoClick = () => {
     setIsMenuOpen((s) => !s);
   };
 
-  // Shared toggle for the burger button
   const handleBurgerClick = () => {
     setIsMenuOpen((s) => !s);
   };
@@ -52,12 +53,10 @@ const Navbar: React.FC = () => {
       <div className="relative mx-auto flex h-20 items-center justify-between px-4 lg:px-8 max-w-7xl">
         {/* --- 1. Center Logo/Button (Always Centered) --- */}
         <div className="absolute left-1/2 -translate-x-1/2">
-          {/* A. Desktop Link (Logo is Link to Home) */}
           <Link href="/home" aria-label="Home" className="hidden md:block">
             {LogoContent}
           </Link>
 
-          {/* B. Mobile Button (Logo is Menu Toggle) */}
           <button
             onClick={handleLogoClick}
             className="md:hidden"
@@ -71,12 +70,13 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* --- 2. Left Navigation Links (Desktop Only) --- */}
-        <div className="hidden md:flex flex-1 justify-end space-x-20 pr-40 text-gray-700">
+        {/* Adjusted spacing to safely fit more items without overlapping the center logo */}
+        <div className="hidden md:flex flex-1 justify-end space-x-10 lg:space-x-16 pr-24 lg:pr-32 text-gray-700">
           {leftItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="hover:text-black transition duration-200 text-sm font-medium"
+              className="hover:text-amber-600 transition duration-200 text-sm font-medium whitespace-nowrap"
             >
               {item.name}
             </Link>
@@ -84,26 +84,24 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* --- 3. Right Navigation Links (Desktop Only & Mobile Filler) --- */}
-        <div className="flex flex-1 justify-start space-x-8 pl-12 text-gray-700 items-center">
-          {/* Desktop Right Links */}
-          <div className="hidden md:flex space-x-20">
+        {/* Adjusted padding to balance the left side */}
+        <div className="flex flex-1 justify-start pl-24 lg:pl-32 text-gray-700 items-center">
+          <div className="hidden md:flex space-x-10 lg:space-x-16">
             {rightItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="hover:text-black transition duration-200 text-sm font-medium"
+                className="hover:text-amber-600 transition duration-200 text-sm font-medium whitespace-nowrap"
               >
                 {item.name}
               </Link>
             ))}
           </div>
 
-          {/* Mobile Placeholder: This div is empty on purpose to push the items to the edge. */}
           <div className="md:hidden w-12" aria-hidden="true">
             {/* Empty space filler */}
           </div>
 
-          {/* --- New: Mobile Burger Button (right side) --- */}
           <button
             onClick={handleBurgerClick}
             className="absolute right-4 top-1/2 -translate-y-1/2 md:hidden flex items-center justify-center p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2"
@@ -112,7 +110,6 @@ const Navbar: React.FC = () => {
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             type="button"
           >
-            {/* show X when open, menu when closed */}
             {isMenuOpen ? (
               <X className="h-6 w-6" />
             ) : (
@@ -129,11 +126,10 @@ const Navbar: React.FC = () => {
           className="md:hidden absolute w-full bg-primary shadow-xl"
         >
           <div className="flex flex-col items-center py-4">
-            {/* Explicit Home Link in Dropdown (as requested) */}
             <Link
               href="/"
               onClick={() => setIsMenuOpen(false)}
-              className="py-2 text-gray-700 font-medium hover:text-black"
+              className="py-2 text-gray-700 font-medium hover:text-amber-600"
             >
               Home
             </Link>
@@ -142,7 +138,7 @@ const Navbar: React.FC = () => {
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="py-2 text-gray-700 font-medium hover:text-black"
+                className="py-2 text-gray-700 font-medium hover:text-amber-600"
               >
                 {item.name}
               </Link>
